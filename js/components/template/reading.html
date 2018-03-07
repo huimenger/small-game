@@ -1,0 +1,6 @@
+﻿<div class="continue auto-x color" v-show="FirstHistory.bid && FirstHistory.cid && FirstHistory.bname" v-bind:class="{'Publish' : $route.path == '/Publish','Boy' : $route.path == '/' || $route.path == '/Boy','Girl' : $route.path=='/Girl'}">
+    <p class="read flex-1">
+        <a class="continueRead" href="/webapp/book/read.html?bookid={{FirstHistory.bid}}&chapterId={{FirstHistory.cid}}">续读：《 <span v-text="FirstHistory.bname"></span> 》</a>
+    </p>
+    <a href="javascript:;" v-show="isShowDownload" v-bind:class="$route.bgClass" v-on:click="download" class="download bg">下载本书</a>
+</div>

@@ -1,0 +1,11 @@
+﻿<div class="read-header" v-show="isShowHeader" v-on:touchend.stop>
+    <div class="left">
+        <a v-on:click="back" v-show="isShowBack" style="display: none;" class="ic-toolbar-prev"></a>
+        <a v-on:click="addShelf" v-show="!isShowBack&&!existshelf" style="display: none;" class="ic-header-add"></a>
+    </div>
+    <div class="right">
+        <a class="ic-header-home" href="/webapp/home/index.html#/"></a>
+        <a style="display: none;" v-on:click="addDesktop" class="ic-header-addDesktop" href="javascript:;"></a>
+        <a class="ic-header-shelf" href="/webapp/home/index.html#/BookShelf"></a>
+    </div>
+</div>

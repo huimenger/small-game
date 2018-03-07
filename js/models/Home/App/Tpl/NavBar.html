@@ -1,0 +1,18 @@
+﻿<ul class="nav_bar bg">
+    <li>
+        <a href="javascript:;" v-link="{path:'/',exact:true}">精选</a>
+    </li>
+    <li>
+        <a href="javascript:;" v-link="{path:'/Rank'}">排行</a>
+    </li>
+    <li>
+        <a href="javascript:;" v-link="{path:'/Category'}">分类</a>
+    </li>
+    <li>
+        <a href="javascript:;" v-link="{path:'/BookShelf'}">书架</a>
+    </li>
+    <li>
+        <a style="color:rgb(255,228,0);" v-if="cover" href="javascript:;" v-link="{path:'/Recharge'}">充值</a>
+        <a style="color:rgb(255,228,0);" v-if="!cover" href="/webapp/account/login.html?redirect=/webapp/home/index.html#!/Recharge">充值</a>
+    </li>
+</ul>

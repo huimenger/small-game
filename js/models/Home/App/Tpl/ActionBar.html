@@ -1,0 +1,5 @@
+﻿<div class="action-bar" v-bind:style="{position:fixed?'fixed':''}">
+    <div class="title">{{title}}</div>
+    <a v-show="showBack" class="btn back" href="javascript:history.go(-1);"><i></i></a>
+    <a v-if="showHome" class="home" href="/webapp/home/index.html#!/">回到首页</a>
+</div>

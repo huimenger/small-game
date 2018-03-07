@@ -1,0 +1,374 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: #000;
+  font-family: "微软雅黑";
+}
+.load_bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;top: 0;
+  background: url("./img/moonCake/loading.jpg") no-repeat;
+  background-size: 100%;
+}
+.loading2{
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -100px 0 0 -75px;
+  .img{
+    width: 150px;
+    height: 110px;
+    background: url("./img/moonCake/loading_icon.png") no-repeat top;
+    background-size: 100%;
+    position: relative;
+    -webkit-animation: Move 2s linear infinite ;
+    animation: Move 2s linear infinite ;
+  }
+  .shadow{
+    width: 150px;
+    height: 40px;
+    background: url("./img/moonCake/loading_icon.png") no-repeat bottom;
+    background-size: 100%;
+    position: absolute;
+    top: 135px;
+    -webkit-animation: Scale 2s linear infinite 0s;
+    animation: Scale 2s linear infinite 0s;
+  }
+  .complete_val{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    top: 165px
+  }
+}
+@-webkit-keyframes Move {
+    0%{top: 0;}
+    50%{top: 14px;}
+    100%{top: 0;}
+}
+@keyframes Move {
+    0%{top: 0;}
+    50%{top: 14px;}
+    100%{top: 0;}
+}
+@-webkit-keyframes Scale {
+    0%{-webkit-transform: scale(1.3);}
+    50%{-webkit-transform: scale(1)}
+    100%{-webkit-transform: scale(1.3)}
+}
+@keyframes Scale {
+  0%{transform: scale(1.3);}
+  50%{transform: scale(1)}
+  100%{transform: scale(1.3)}
+}
+
+.showPup{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;top: 0;
+  display: none;
+  .bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index : 1;
+    background: rgba(0,0,0,0.8);
+  }
+
+  .content{
+    position: absolute;
+    width: 300px;
+    height: 236px;
+    left: 50%;
+    top: 50%;
+    margin: -140px 0 0 -142px;
+    z-index : 2;
+    padding: 41px 37px 0 21px;
+    box-sizing: border-box;
+    background: url("./img/moonCake/textScene.png") no-repeat 0 0;
+    background-size: 452px;
+    .hide_but{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .list{
+      display: none;
+    }
+    .list_gz{
+      p{
+        font-size: 14px;
+        line-height: 24px;
+        color:#512507;
+        span{
+          color: #e74313;
+        }
+      }
+    }
+    .list_tj,.list_reg{
+      .form{
+        height:40px;
+        line-height:40px;
+        width:90%;
+        margin: 10px auto 15px auto;
+        border-radius: 18px;
+        overflow: hidden ;
+        background: #8c5328;
+        position: relative;
+        overflow: hidden;
+        .phone,.yzm{
+          font-family: "微软雅黑";
+          background: none;
+          width: 125px;
+          height: 100%;
+          padding:11px 0 10px 10px;
+          box-sizing: border-box;
+          border: 0 none;
+          color:#fff;
+          font-size:14px;
+          outline: none;
+          -webkit-tap-highlight-color:rgba(0,0,0,0);
+          &::-webkit-input-placeholder{
+            color:#ac7854;
+          }
+        }
+        .pas{
+          font-family: "微软雅黑";
+          background: none;
+          width: 100%;
+          line-height: 40px;
+          height: 100%;
+          padding-left:10px;
+          box-sizing: border-box;
+          border: 0 none;
+          color:#fff;
+          font-size:14px;
+          outline: none;
+          &::-webkit-input-placeholder{
+            color:#ac7854;
+          }
+        }
+        .yzm{
+          width:100%;
+        }
+        .getCode{
+          line-height:40px;
+          height:41px;
+          border-radius: 18px;
+          width:90px;
+          outline: none;
+          cursor: pointer;
+          -webkit-transition:all 0.5s ease-in;
+          transition:all 0.5s ease-in;
+          position:absolute;
+          right:0;top: 0;
+          background: #f55b3f;
+          color: #fff;
+          font-size:12px;
+          text-align: center;
+        }
+      }
+      .submit,.submitReg{
+          -webkit-tap-highlight-color:rgba(255,255,255,0);
+          tap-highlight-color:rgba(255,255,255,0);
+          width:90%;
+          height:55px;
+          line-height: 40px;
+          background: url("./img/moonCake/text3.png") no-repeat 9px -230px;
+          background-size: 910px 348px;
+          margin-left: 2%;
+          outline: none;
+          cursor: pointer;
+          filter:chroma(color=#000000);
+          &:active{
+            background: url("./img/moonCake/text3.png") no-repeat -210px -230px;
+            background-size: 910px 348px;
+            margin-left: 7%;
+          }
+      }
+      .submitReg{
+        background: url("./img/moonCake/regist.png") no-repeat -3px -4px;
+        background-size: 222px 113px;
+        margin-left: 4%;
+        &:active{
+          background: url("./img/moonCake/regist.png") no-repeat -3px -59px;
+          background-size: 222px 113px;
+        }
+      }
+    }
+  }
+}
+.tips_ts{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+    img{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -150px;
+      -webkit-animation:bingk 0.5s ease-in-out infinite;
+      animation:bingk 0.5s ease-in-out infinite;
+    }
+}
+
+@keyframes bingk {
+  0%{
+     opacity:0; /*透明度为0*/
+   }
+  100%{
+     opacity:1; /*透明度为1*/
+  }
+}
+
+.loadingWarp{
+  position:absolute;margin:auto;top:0;bottom:0;left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 99999;
+  overflow: hidden;
+  display: none;
+    .text{
+        position: absolute;
+        top: 50%;margin-top: 60px;
+        color: rgba(255,255,255,0.8);
+        text-align: center;
+        width: 100%;
+        font-size: 14px;
+      }
+  }
+.loading{
+	position:absolute;margin:auto;top:0;bottom:0;left:0;right:0;width:6.250em;height:6.250em;
+
+	-webkit-animation:rotate 2.4s linear infinite;
+	-moz-animation:rotate 2.4s linear infinite;
+	-o-animation:rotate 2.4s linear infinite;
+	animation:rotate 2.4s linear infinite;
+}
+.loading .white {
+	top:0;bottom:0;left:0;right:0;background:white;opacity:0;
+
+	-webkit-animation:flash 2.4s linear infinite;
+	-moz-animation:flash 2.4s linear infinite;
+	-o-animation:flash 2.4s linear infinite;
+	animation:flash 2.4s linear infinite;
+}
+.loading .dot {
+	position:absolute;margin:auto;width:2.4em;height:2.4em;border-radius:100%;
+
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	-o-transition:all 1s ease;
+	transition:all 1s ease;
+}
+.loading .dot:nth-child(2) {
+	top:0;bottom:0;left:0;background:#FF4444;
+
+	-webkit-animation:dotsY 2.4s linear infinite;
+	-moz-animation:dotsY 2.4s linear infinite;
+	-o-animation:dotsY 2.4s linear infinite;
+	animation:dotsY 2.4s linear infinite;
+}
+.loading .dot:nth-child(3) {
+	left:0;right:0;top:0;background:#FFBB33;
+
+	-webkit-animation:dotsX 2.4s linear infinite;
+	-moz-animation:dotsX 2.4s linear infinite;
+	-o-animation:dotsX 2.4s linear infinite;
+	animation:dotsX 2.4s linear infinite;
+}
+.loading .dot:nth-child(4) {
+	top:0;bottom:0;right:0;background:#99CC00;
+
+	-webkit-animation:dotsY 2.4s linear infinite;
+	-moz-animation:dotsY 2.4s linear infinite;
+	-o-animation:dotsY 2.4s linear infinite;
+	animation:dotsY 2.4s linear infinite;
+}
+.loading .dot:nth-child(5) {
+	left:0;right:0;bottom:0;background:#33B5E5;
+
+	-webkit-animation:dotsX 2.4s linear infinite;
+	-moz-animation:dotsX 2.4s linear infinite;
+	-o-animation:dotsX 2.4s linear infinite;
+	animation:dotsX 2.4s linear infinite;
+}
+@keyframes rotate {
+	0% {
+		-webkit-transform:rotate( 0 );
+		-moz-transform:rotate( 0 );
+		-o-transform:rotate( 0 );
+		transform:rotate( 0 );
+	}
+	10% {
+		width:6.250em;
+		height:6.250em;
+	}
+	66% {
+		width:2.4em;
+		height:2.4em;
+	}
+	100% {
+		-webkit-transform:rotate(360deg);
+		-moz-transform:rotate(360deg);
+		-o-transform:rotate(360deg);
+		transform:rotate(360deg);
+		width:6.250em;
+		height:6.250em;
+	}
+}
+
+@keyframes dotsY {
+	66% {
+		opacity:.1;
+		width:2.4em;
+	}
+	77% {
+		opacity:1;
+		width:0;
+	}
+}
+
+@keyframes dotsX {
+	66% {
+		opacity:.1;
+		height:2.4em;
+	}
+	77% {
+		opacity:1;
+		height:0;
+	}
+}
+
+@keyframes flash {
+	33% {
+		opacity:0;
+		border-radius:0%;
+	}
+	55% {
+		opacity:.6;
+		border-radius:100%;
+	}
+	66% {
+		opacity:0;
+	}
+}

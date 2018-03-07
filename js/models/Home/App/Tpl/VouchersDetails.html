@@ -1,0 +1,13 @@
+﻿<div v-show="pageEnd">
+    <app-action show-home="false" title="我的代金券"></app-action>
+
+    <div id="vouchers-details">
+        <dl v-for="item in list">
+            <dt>
+                <p class="number">{{item.coupon}}代金券</p>
+                <p class="origin">来自：{{item.source}}</p>
+            </dt>
+            <dd>获得时间：{{item.addTime}}</dd>
+        </dl>
+    </div>
+</div>

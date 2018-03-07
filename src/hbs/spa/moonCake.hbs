@@ -1,0 +1,52 @@
+{{#extend "layout"}}
+    {{#content "body"}}
+        <div class="load_bg">
+          <div class="loading2">
+            <div class="img" src="" alt="" ></div>
+            <div class="shadow"></div>
+            <div class="complete_val">0%</div>
+          </div>
+        </div>
+        <div class="showPup">
+            <div class="bg"></div>
+            <div class="content">
+                <div class="hide_but"></div>
+                <div class="list list_gz">
+                  <p>1.活动时间：<span>2016.9.14-2016.9.16</span></p>
+                  <p>2.游戏规则：小白兔避开障碍物吃月饼（小月饼计1分，书香logo计2分）。活动获得的积分可兑换金币，1积分兑换1金币，首次分享加20金币。</p>
+                  <p>3.特别明示：游戏次数不限，但用户仅可兑换一次金币，送完为止（5,000,000金币）。</p>
+                </div>
+                <div class="list list_tj">
+                  <div class="form phoneBox">
+                    <input id="phone" type="phone" name="phone" class="phone" placeholder="输入手机号码">
+                    <div id="getCode" class="getCode">获取验证码</div>
+                  </div>
+                  <div id="code" class="form codeBox">
+                    <input type="phone" class="yzm" id="codeYZM"  name="phone" placeholder="输入验证码">
+                  </div>
+                    <div class="submit"></div>
+                </div>
+                <div class="list list_reg">
+                  <div class="form phoneBox">
+                    <input type="password" name="password" class="pas password" placeholder="请设置密码">
+                  </div>
+                  <div  class="form codeBox">
+                    <input type="password" class="pas surePassword"  name="phone" placeholder="重复密码">
+                  </div>
+                    <div class="submitReg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loadingWarp">
+          <div class="loading">
+          	<div class="dot white"></div>
+          	<div class="dot"></div>
+          	<div class="dot"></div>
+          	<div class="dot"></div>
+          	<div class="dot"></div>
+          </div>
+          <div class="text">加载数据中...</div>
+        </div>
+        <div class="tips_ts"><img src="./img/moonCake/tips.png" alt="" /></div>
+    {{/content}}
+{{/extend}}

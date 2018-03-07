@@ -1,0 +1,21 @@
+{
+    "name": "rollup-plugin-vuefile",
+    "version": "1.0.0",
+    "description": "rollup,rollup-plugin,vue",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "vue"
+    ],
+    "author": "Enok",
+    "license": "ISC",
+    "dependencies": {
+        "de-indent": "^1.0.2",
+        "escodegen": "^1.8.1",
+        "rollup-pluginutils": "^1.5.1"
+    }
+}

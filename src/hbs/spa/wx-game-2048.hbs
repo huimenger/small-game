@@ -1,0 +1,119 @@
+{{#extend "layout"}}
+    {{#content "body"}}
+        <div id="main-controller">
+            <div class="load_bg">
+                <div class="loading2">
+                    <div class="img"></div>
+                    <div class="shadow"></div>
+                    <div class="complete_val">0%</div>
+                </div>
+            </div>
+            <img class="header" src="http://www.arashi.com.cn/jsdemo/2048/spa/img/merryChristmas/topFlowers.png"/>
+            <div class="main">
+                <img class="bg" src="http://www.arashi.com.cn/jsdemo/2048/spa/img/merryChristmas/content_2.png?test4"
+                     alt=" ">
+                <div class="leaderBord">
+                    <div class="show_leader" @click="showDesc(4)"></div>
+                    <div class="show-desc" @click="showDesc(3)"></div>
+                </div>
+                <div class="text">
+                    <div class="current">
+                        <p>
+                            当前：<span class="value" v-text="currentScore"></span>
+                        </p>
+                    </div>
+                    <div class="time" v-text="timeout"></div>
+                    <div class="top_pass">
+                        <p>
+                            最高：<span class="value" v-text="topScore"></span>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="gameContent">
+                    <ul class="map-cont">
+                        <li id="tile-00"></li>
+                        <li id="tile-01"></li>
+                        <li id="tile-02"></li>
+                        <li id="tile-03"></li>
+                        <li id="tile-10"></li>
+                        <li id="tile-11"></li>
+                        <li id="tile-12"></li>
+                        <li id="tile-13"></li>
+                        <li id="tile-20"></li>
+                        <li id="tile-21"></li>
+                        <li id="tile-22"></li>
+                        <li id="tile-23"></li>
+                        <li id="tile-30"></li>
+                        <li id="tile-31"></li>
+                        <li id="tile-32"></li>
+                        <li id="tile-33"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="http://www.arashi.com.cn/jsdemo/2048/spa/img/merryChristmas/logo.png" alt="">
+            </div>
+            <div class="game-over">
+                <div class="bg"></div>
+                <div class="scene_1">
+                    <div class="text">
+                        <p class="t">游戏结束 </p>
+                        <p class="time">用时：<span class="current-time">00 : 00 : 00</span><br></p>
+                        <p class="desc">
+                            您已晋级到“<span class="current-result"></span>”<br>
+                            大奖在向您招手哦~<br>
+                            再接再励((●'◡'●))
+                        </p>
+                    </div>
+                    <div class="but">
+                        <div class="but-1 replay-game">不服再战</div>
+                        <div class="but-2 share-result" @click="showAndHideShare">分享战绩</div>
+                    </div>
+                </div>
+                <div class="scene_3">
+                    <div class="text">
+                        <div class="content">
+                            <p class="t">游戏规则 </p>
+                            <p>滑动相同的文字组合，文字组合成功即通关一次。晋级路径：<span>除夕(2) → 元宵(4) → 五一(8) → 端午(16) → 七夕(32) → 中秋(64) → 国庆(128) → 重阳(256) → 圣诞(512) → 元旦(1024) → 书香(2048)</span></p>
+                        </div>
+                    </div>
+                    <div class="but">
+                        <div class="but-3" @click="closeDesc">知道了</div>
+                    </div>
+                </div>
+                <div class="scene_2">
+                    <div class="text">
+                        <p class="t"> </p>
+                        <p class="desc">恭喜你已经通关</p>
+                        <p class="time">用时：<span class="current-time2">00 : 00 : 00</span><br></p>
+                    </div>
+                    <div class="but">
+                        <div class="but-1 show-leaderBoard"><a @click="goLookBook()">去看书</a></div>
+                        <div class="but-2 share-result" @click="showAndHideShare">分享结果</div>
+                    </div>
+                </div>
+                <div class="scene_4">
+                    <div class="text">
+                        <h3>排行榜</h3>
+                        <div class="phb">
+                            <dl class="content">
+                                <dd v-for="item in list">
+                                    <span class="tb_1" v-text="item.rank"></span>
+                                    <span class="tb_2" v-text="item.wxNick"></span>
+                                    <span class="tb_3" v-text="item.festivalType"></span>
+                                    <span class="tb_4" v-text="item.costSecond"></span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="but">
+                        <div class="but-3" @click="closeDesc">知道了</div>
+                    </div>
+                </div>
+            </div>
+            <div class="shared_wap" v-if="isShare" @click="showAndHideShare"><img
+                    src="http://www.arashi.com.cn/jsdemo/2048/spa/img/merryChristmas/shareImg.png"></div>
+        </div>
+    {{/content}}
+{{/extend}}

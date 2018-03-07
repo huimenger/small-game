@@ -1,0 +1,23 @@
+﻿<div id="p_recharge" v-bind:class="{'acive':!pageEnd}">
+    
+    <div class="item">
+        <div class="list" v-for="el in list" v-on:click="open(el)">
+            <div class="money">{{el.money}}</div>
+            <div class="details">
+                <p class="coin">{{el.coin}}</p>
+                <p class="voucher" v-if="el.presentCoupon != 0">赠<span>{{el.presentCoupon}}</span>代金券</p>
+                <p class="voucher" v-if="el.activity && el.activity.presentCoupon != 0">赠<span>{{el.activity.presentCoupon}}</span>代金券</p>
+                <p class="note" v-if="el.activity"><img v-bind:src="el.activity.img" /></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip" v-show="pageEnd">
+        温馨提示：<br>
+        1. 金币兑换规则：1元=100金币。赠送的代金券与金币等值，有效期为90天，付费时优先扣除。<br>
+        2. 安卓与苹果平台之间，金币和代金券不通用。<br>
+        3. 如有疑问，请致电 023-88756856 或发邮件至<br>
+        support@ireadercity.com
+    </div>
+
+</div>

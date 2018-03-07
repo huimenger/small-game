@@ -1,0 +1,11 @@
+﻿<div class="v-add-top-desktop" v-show="isAndroidWX" v-bind:class="{ 'v-add-top-desktopChrome' : isAndroidChrome ,'v-add-top-desktopXiaoMi' : isXiaoMi}" v-on:touchend.stop.prevent>
+    <div class="v-c_style-1" v-show="isShowiPhone">
+        <img class="c_logo" src="https://d.ireadercity.com/WebResource/webapp/resources/v3/img/logo-ms.png" />
+        <div class="c_cont" v-html="html"></div>
+        <img @touchstart.stop="close()" class="c_close" src="https://d.ireadercity.com/WebResource/webapp/resources/v3/img/c_close.png" />
+        <span class="c_sj"></span>
+    </div>
+    <div class="v-c_style-2" v-show="!isShowiPhone && !isShowiAndroid" @touchstart.stop="hideCont()">
+        <img src="https://d.ireadercity.com/WebResource/webapp/resources/v3/img/iOS-3_03.png" />
+    </div>
+</div>

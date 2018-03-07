@@ -1,0 +1,45 @@
+﻿<div class="read-chapter" v-if="chapter && chapter.content">
+    <div class="title">{{chapter.title}}</div>
+    <div class="content">{{{chapter.content}}}</div>
+    <div v-show="!chapter.locked">
+        <div class="chapter-tool" v-show="isShowBtns">
+            <a href="javascript:void(0)" class="menu btn-primary" v-on:touchend.stop.prevent="showMenu">菜单</a>
+            <a href="javascript:void(0)" class="next btn-primary" v-on:touchend.stop.prevent="nextChapter">下一章</a>
+        </div>
+        <div v-show="!noFollowWX">
+            <div class="chapter-ad style1" v-if="!isWexin">
+                <a v-on:touchend.stop.prevent="concernWx" href="javascript:void(0)" v-text="wx_tips"></a>
+            </div>
+            <div class="chapter-ad style2" v-if="isWexin && (!noqrcode)">
+                <img width="100" src="https://d.ireadercity.com/WebResource/webapp/resources/v3/img/qrcode.png" />
+                <div>长按上图二维码，识别关注</div>
+            </div>
+        </div>
+        <div class="chapter-ad style2" v-if="isWexin && noqrcode" style="margin-bottom: 70px;">
+
+        </div>
+    </div>
+    <div class="locked" v-if="chapter.locked">
+        <div class="title">本章节为收费章节</div>
+        <div class="desc">购买后可继续阅读，感谢您对正版的支持！</div>
+        <div class="coin-info">
+            <div class="wrapper">
+                <div>
+                    本章价格：<span class="coin">{{chapter.coin}}</span>金币
+                </div>
+                <div>
+                    余额：
+                    <span class="coin">{{chapter.userCoin}}</span>金币 + 
+                    <span class="coin">{{chapter.userCoupon}}</span>代金券
+                </div>
+            </div>
+        </div>
+        <div class="autobuy" v-on:touchend.stop>
+            <label><input type="checkbox" v-model="autoBuyChapter" v-on:click.stop,prevent="toggleAutoBuyChapter" /> 自动购买下一章，不再显示该提示</label>
+        </div>
+        <div class="btns">
+            <a class="btn buysingle btn-primary" v-on:touchend.stop="buySingleChapter" href="javascript:void(0)">购买本章</a>
+            <a class="btn buymulti btn-secondary" v-on:touchend.stop="buyMultiChapter" href="javascript:void(0)">批量购买，更多优惠</a>
+        </div>
+    </div>
+</div>

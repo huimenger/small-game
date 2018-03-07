@@ -1,0 +1,43 @@
+﻿<div>
+    <app-header></app-header>
+    <action-bar style="top:48px;" title="我的书架"></action-bar>
+    <div id="new-book-shelf">
+        <ul class="tab">
+            <li v-bind:class="{'active' : TabStatus==1}" v-on:click="Tab(1)">最近阅读</li>
+            <li v-bind:class="{'active' : TabStatus==2}" v-on:click="Tab(2)">云书架</li>
+        </ul>
+        <div class="view">
+            <div class="history" v-show="TabStatus==1" style="display: none;">
+                <a v-show="hasHistory" class="item" v-for="el in bookReadHistory" href="/webapp/book/read.html?bookid={{el.bid}}&chapterId={{el.cid}}">
+                    <span v-text="el.bname"></span>
+                    <span v-text="el.cname">第1章 生儿子</span>
+                </a>
+                <a v-show="!hasHistory" class="noHistory">您还没有浏览历史额</a>
+                <div v-show="hasHistory" style="padding:10px;text-align:center;color:#C1C1C1;">最多只展示最近阅读的10本书</div>
+            </div>
+			
+            <div class="bookrack" v-show="TabStatus==2" style="display: none;">
+                <ul v-show="hasBooks">
+                    <li v-for="el in ListShelfBooks">
+                        <a v-bind:href="getUrl(el)">
+                            <p class="pic">
+                                <img v-bind:src="el.book.cover"/>
+                            </p>
+                            <p class="name" v-text="el.book.bookTitle"></p>
+                        </a>
+                    </li>
+                    <li v-if="ListShelfBooks.length % 3==2">
+                    </li>
+                </ul>
+                <a v-show="!hasBooks" class="noHistory">
+                    您还没有书籍<br/><br/> 
+                    请在书城中选择您喜欢的书籍加入书架吧
+                </a>
+                <p class="hint" v-show="!isLogin" style="display: none; font-size: 16px; margin-top: 50px">
+                    云书架支持跨设备同步书籍<br/>
+                    立即<a href="/webapp/Account/Login.html?redirect=/webapp/home/index.html#/BookShelf">登录</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

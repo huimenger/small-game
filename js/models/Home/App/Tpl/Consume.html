@@ -1,0 +1,43 @@
+﻿<div v-show="pageEnd">
+    <app-action title="我的账单"></app-action>
+    <div id="p_consume">
+
+        <ul class="nav_list">
+            <li v-bind:class="{'on':current == 1}" v-on:click="tab(1)"><span>消费记录</span></li>
+            <li v-bind:class="{'on':current == 2}" v-on:click="tab(2)"><span>充值记录</span></li>
+        </ul>
+
+        <div class="showDis" v-show="current==1">
+            <p class="noCont" v-show="dataPay.item.length==0 && dataPay.firstLoadEnd">暂无数据</p>
+            <dl class="content" v-for="info in dataPay.item">
+                <dt v-show="($index != 0 && dataPay.item[$index-1].month) != info.month"><span v-text="new Date().getFullYear()==info.createDate.substring(0,4) && new Date().getMonth()+1 == info.month ? '本' : info.month"></span>月</dt>
+                <dd>
+                    <p class="tt">
+                        <span v-show="info.coupon>0"><span v-text="'-'+info.coupon"></span> 代金券  </span>
+                        <span v-show="info.gold>0"><span v-text="'-'+info.gold"></span> 金币</span>
+                        <span class="rit" v-text="info.createDate | filter-date"></span>
+                    </p>
+                    <p class="sour">来自: <span v-text="info.desc"></span></p>
+                </dd>
+            </dl>
+            <p class="noCont" v-show="dataPay.isEnd && dataPay.item.length!=0">已经到底了</p>
+        </div>
+
+        <div class="showDis" v-show="current==2">
+            <p class="noCont" v-show="dataRecharge.item.length==0 && dataRecharge.firstLoadEnd">暂无数据</p>
+            <dl class="content" v-for="info in dataRecharge.item">
+                <dt v-show="($index != 0 && dataRecharge.item[$index-1].month) != info.month"><span v-text="new Date().getFullYear()==info.createDate.substring(0,4) && new Date().getMonth()+1 == info.month ? '本' : info.month"></span>月</dt>
+                <dd>
+                    <p class="tt">
+                        <span v-show="info.coupon>0"><span v-text="'+'+info.coupon"></span> 代金券  </span>
+                        <span v-show="info.gold>0"><span v-text="'+'+info.gold"></span> 金币</span>
+                        <span class="rit" v-text="info.createDate | filter-date"></span>
+                    </p>
+                    <p class="sour">来自: <span v-text="info.desc"></span></p>
+                </dd>
+            </dl>
+            <p class="noCont" v-show="dataRecharge.isEnd && dataRecharge.item.length!=0">已经到底了</p>
+        </div>
+
+    </div>
+</div>

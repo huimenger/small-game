@@ -1,0 +1,13 @@
+﻿<div v-show="!item.length" style="height:600px;"></div>
+
+<!--<div class="headSearch">
+    <view-search></view-search>
+</div>-->
+
+<view-card1 color="#FF8F52" style="margin-top:5px;" v-bind:autoplay="3000" v-bind:books="booksJinxuan" title="每日精选" more="/webapp/home/index.html#/Timeline"></view-card1>
+
+<div v-for="card in item">
+    <view-card2 v-if="card.style==2" v-bind:color="card.color" style="margin-top:10px;" v-bind:books="card.books" v-bind:title="card.tagName" v-bind:more="card.url"></view-card2>
+    <view-card2 v-if="card.style==3" v-bind:show-rank="false" v-bind:color="card.color" style="margin-top:10px;" v-bind:books="card.books" v-bind:title="card.tagName" v-bind:more="card.url"></view-card2>
+    <view-card3 v-if="card.style==0" v-bind:color="card.color" style="margin-top:10px;" v-bind:books="card.books" v-bind:title="card.tagName" v-bind:more="card.url"></view-card3>
+</div>

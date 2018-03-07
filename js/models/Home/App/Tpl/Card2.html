@@ -1,0 +1,27 @@
+﻿<div class="book-card card2">
+    <div class="card-header">
+        <h3 v-bind:style="{color:color}"><i v-bind:style="{backgroundColor:color}"></i><span>{{title}}</span></h3>
+        <a v-bind:style="{color:color}" v-if="more" class="more" v-bind:href="more">
+            更多
+            <svg x="0px" y="0px" width="10px" height="10px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+            <path v-bind:fill="color" d="M15.5,10c0-0.3-0.1-0.5-0.3-0.7l-8-8c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4l7.3,7.3l-7.3,7.3c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0l8-8C15.4,10.5,15.5,10.3,15.5,10z" /></svg>
+        </a>
+    </div>
+    <div class="slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="book in list">
+                    <a v-bind:href="'/webapp/book/detail.html?bookid=' + book.bookId">
+                        <div class="cover">
+                            <img v-bind:src="book.cover" />
+                            <svg v-if="$index<3&&showRank" width="18px" height="20px" viewBox="0 0 31 32.73"><polygon points="15.5 26.63 0 32.73 0 0 31 0 31 32.56 15.5 26.63" v-bind:style="{fill:color}" /></svg>
+                            <span v-if="$index<3&&showRank">{{$index+1}}</span>
+                        </div>
+                        <span class="title">{{book.bookTitle}}</span>
+                        <span class="author">{{book.bookAuthor}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

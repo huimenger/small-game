@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="-1">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+
+
+    <!--分享摘要信息（标准做法)-->
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{icon}}">
+
+    {{#if appid}}
+    <meta name="appid" content="{{appid}}" data-appid="{{appid}}">
+    {{/if}}
+
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <!-- 分享摘要信息（兼容做法）-->
+    <div id="share_summary" style="display: none;">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <img src="{{icon}}" />
+    </div>
+
+    {{#block "body"}}
+    {{/block}}
+</body>
+
+</html>

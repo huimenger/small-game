@@ -1,0 +1,9 @@
+﻿<div class="category-box" v-show="list&&list.length>0">
+    <div class="title"><span>{{title}}</span></div>
+    <div class="split-bar"></div>
+    <ul>
+        <li v-for="item in list">
+            <a v-bind:href="'/webapp/category/list.html?id=' + item.categoryId">{{item.name}}</a>
+        </li>
+    </ul>
+</div>

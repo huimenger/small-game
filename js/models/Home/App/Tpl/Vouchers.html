@@ -1,0 +1,23 @@
+﻿<div v-show="pageEnd">
+    <app-action show-home="false" title="我的代金券"></app-action>
+    <div id="vouchers">
+        <div v-show="list.length">
+            <dl class="msg">
+                <dt v-text="number"></dt>
+                <dd>代金券（付费时优先扣除）</dd>
+            </dl>
+            <div class="item">
+                <dl class="list" v-link="{path:'/Vouchers/details', query: { date : item.endDate } }" v-for="item in list" v-bind:class="{'effective':item.status==1,'finish':item.status==0,'failure':item.status==2}">
+                    <dt>
+                        <span class="number" v-text="item.coupon"></span>
+                        <span>代金券</span>
+                    </dt>
+                    <dd>有效期至：<span v-text="item.endDate"></span></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="null" v-show="!list.length">
+            您还没有获得代金券哦
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿<div class="v-view-tab">
+    <ul v-if="!tabHead" v-bind:id="pageId" v-bind:class="'view-tab-head'+tabStyle">
+        <li class="active"></li>
+        <li></li>
+    </ul>
+    <div v-bind:id="tabId" class="swiper-container">
+        <div class="swiper-wrapper" style="height: auto; width: 100%;">
+            <slot></slot>
+        </div>
+    </div>
+</div>

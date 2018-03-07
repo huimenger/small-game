@@ -1,0 +1,55 @@
+﻿<div class="read-footer" v-on:touchend.stop>
+    <div v-show="isShowAnyDownload" class="footer-ad" v-bind:class="{show:isShowDownload}">
+        <img src="https://d.ireadercity.com/WebResource/webapp/resources/v3/img/logo2.png" />
+        <span class="title">下载书香云集客户端</span>
+        <span class="desc">海量小说、离线阅读、精美排版</span>
+        <a v-on:click="download2" class="down">立即体验</a>
+    </div>
+    <div class="offline" style="display: none;" v-show="isShowOffline">
+        <span>离线缓存</span>
+        <button v-on:click="preload" class="preload">预存后续免费20章</button>
+        <button v-show="isShowAnyDownload" v-on:click="download" class="download">下载手机客户端，整本离线阅读</button>
+    </div>
+    <ul v-show="isShowSetting" class="options load-mode">
+        <div class="tabtn">
+            <span v-bind:class="{'active':loadMode==0}" style="left: 0px;" v-on:click="setLoadMode(0)">手动加载</span>
+            <span v-bind:class="{'active':loadMode==1}" class="active" style="left: 100px;" v-on:click="setLoadMode(1)">自动加载</span>
+        </div>
+    </ul>
+    <ul v-show="isShowSetting" class="options font-size">
+        <li class="font14"><span v-on:click="setFontSize(14)" v-bind:class="{active:fontSize==14}">A</span></li>
+        <li class="font16"><span v-on:click="setFontSize(16)" v-bind:class="{active:fontSize==16}">A</span></li>
+        <li class="font18"><span v-on:click="setFontSize(18)" v-bind:class="{active:fontSize==18}">A</span></li>
+        <li class="font20"><span v-on:click="setFontSize(20)" v-bind:class="{active:fontSize==20}">A</span></li>
+        <li class="font22"><span v-on:click="setFontSize(22)" v-bind:class="{active:fontSize==22}">A</span></li>
+    </ul>
+    <ul v-show="isShowSetting" class="options theme">
+        <li class="theme1"><span v-bind:class="{active:currentTheme==1}" v-on:click="setTheme(1)">标准</span></li>
+        <li class="theme2"><span v-bind:class="{active:currentTheme==2}" v-on:click="setTheme(2)">复古</span></li>
+        <li class="theme4"><span v-bind:class="{active:currentTheme==4}" v-on:click="setTheme(4)">护眼</span></li>
+        <li class="theme3"><span v-bind:class="{active:currentTheme==3}" v-on:click="setTheme(3)">清新</span></li>
+        <li class="theme5"><span v-bind:class="{active:currentTheme==5}" v-on:click="setTheme(5)">夜晚</span></li>
+    </ul>
+    <ul class="toolbar" v-show="isShowFooter">
+        <li v-on:touchstart="prevChapter">
+            <i class="ic-toolbar-prev"></i>
+            <span>上一章</span>
+        </li>
+        <li v-on:touchstart="showIndex">
+            <i class="ic-toolbar-index"></i>
+            <span>目录</span>
+        </li>
+        <li v-on:touchstart="toggleSetting">
+            <i class="ic-toolbar-setting"></i>
+            <span>设置</span>
+        </li>
+        <li v-on:touchstart="toggleOffline">
+            <i class="ic-toolbar-down"></i>
+            <span>离线</span>
+        </li>
+        <li v-on:touchstart="nextChapter">
+            <i class="ic-toolbar-next"></i>
+            <span>下一章</span>
+        </li>
+    </ul>
+</div>
