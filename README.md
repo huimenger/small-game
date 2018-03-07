@@ -14,10 +14,10 @@
     ****
 </p>
 <p>
-    ###　　　　　　　　　　　　Author:暖炉先生
+    ###　Author:暖炉先生
 </p>
 <p>
-    ###　　　　　　　　　 E-mail:huimenger@163.com
+    ###　E-mail:huimenger@163.com
 </p>
 <p>
     <br/>
